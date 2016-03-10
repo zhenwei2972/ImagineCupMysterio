@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Artifact
   - Loader
+  - ScannerUI
+  - ImageTarget
+  - MayanCalendarSupport
+  - MayanCalendarPiece
+  - VRHead
   layers:
   - Default
   - TransparentFX
