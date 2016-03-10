@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding ="UTF-8"?>
+<ArtifactCollection>
+  <Artifacts>
+    <Artifact>
+      <name>MAYAN STATUE</name>
+      <location>MERLION PARK</location>
+      <description>Ancient statue carved from stone, symbol of great power and respect</description>
+    </Artifact>
+    <Artifact>
+      <name>MAYAN MASK</name>
+      <location>RAFFLES STATUE</location>
+      <description>Symbol of the great kings, to preserve their eternal rule.</description>
+    </Artifact>
+    <Artifact>
+      <name>MAYAN TABLET</name>
+      <location>GIANT BABY</location>
+      <description>Pieces of history etched in stone, to preserve the actions of the civilization</description>
+    </Artifact>
+  </Artifacts>
+</ArtifactCollection>
