@@ -8,4 +8,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/HardyScene.unity
   - enabled: 1
-    path: Assets/testScene1.unity
+    path: Assets/ARScene.unity
