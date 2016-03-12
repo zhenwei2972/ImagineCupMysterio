@@ -11,6 +11,8 @@ TagManager:
   - MayanCalendarSupport
   - MayanCalendarPiece
   - VRHead
+  - AnagramHandle
+  - AnagramSolver
   layers:
   - Default
   - TransparentFX

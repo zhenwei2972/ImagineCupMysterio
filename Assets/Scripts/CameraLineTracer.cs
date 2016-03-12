@@ -65,6 +65,7 @@ public class CameraLineTracer : MonoBehaviour
             }
             else if (!puzzleMode && hit.transform.gameObject.tag.Equals("MayanCalendarPiece"))
             {
+                #region Mayan Calendar Piece
                 viewedObjects[0] = hit.transform.gameObject;
 
                 if (viewedObjects[0] == viewedObjects[1])
@@ -74,14 +75,32 @@ public class CameraLineTracer : MonoBehaviour
                 else
                 {
                     viewedObjects[1] = hit.transform.gameObject;
-                    //puzzleMode = true;
                     hit.transform.gameObject.GetComponent<PuzzlePiece>().PieceMoveStart();
                 }
+                #endregion
             }
             else if (puzzleMode && hit.transform.gameObject.tag.Equals("MayanCalendarSupport"))
             {
-                Debug.Log("Following bah");
+                #region Mayan Calendar Support
                 puzzleGazePos = hit.point;
+                #endregion
+            }
+            else if (hit.transform.gameObject.tag.Equals("AnagramHandle"))
+            {
+                #region Anagram
+                viewedObjects[0] = hit.transform.gameObject;
+
+                if (viewedObjects[0] == viewedObjects[1])
+                {
+
+                }
+                else
+                {
+                    if ( viewedObjects[1] != null && viewedObjects[1].tag.Equals("AnagramHandle"))viewedObjects[1].GetComponent<AnagramHandle>().isLookedAt = false;
+                    viewedObjects[1] = hit.transform.gameObject;
+                    hit.transform.gameObject.GetComponent<AnagramHandle>().isLookedAt = true;
+                }
+                #endregion
             }
         }
         else
@@ -92,8 +111,6 @@ public class CameraLineTracer : MonoBehaviour
             {
                 viewedObjects[1].GetComponent<ArtifactBehaviour>().Deactivate();
                 viewedObjects[1] = null;
-
-                Debug.Log("LAG");
             }
             else if (viewedObjects[1] != null && (viewedObjects[1].tag.Equals("MayanCalendarPiece") || viewedObjects[1].tag.Equals("MayanCalendarSupport")))
             {
@@ -103,8 +120,20 @@ public class CameraLineTracer : MonoBehaviour
                 {
                     p.GetComponent<PuzzlePiece>().isLookedAt = false;
                 }
+
+                if (viewedObjects[1].GetComponent<PuzzlePiece>().isMoving) // was being moved
+                {
+                    // Reset to original position
+                    viewedObjects[1].GetComponent<PuzzlePiece>().ResetPiece();
+                }
+
                 viewedObjects[1] = null;
-                Debug.Log("More lag");
+                puzzleMode = false;
+            }
+            else if (viewedObjects[1] != null && (viewedObjects[1].tag.Equals("AnagramHandle")))
+            {
+                viewedObjects[1].GetComponent<AnagramHandle>().Deselect();
+                viewedObjects[1] = null;
             }
         }
     }

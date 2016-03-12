@@ -44,6 +44,6 @@ public class ArtifactBehaviour : MonoBehaviour {
     {
         isLookedAt = false;
         infoCanvas.GetComponent<Animator>().SetBool("IsDisplaying", false);
-        infoCanvas.GetComponent<ArtifactText>().isDisplaying = false;
+        infoCanvas.GetComponent<ArtifactText>().Reset();
     }
 }

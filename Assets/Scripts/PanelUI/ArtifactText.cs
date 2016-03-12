@@ -17,6 +17,7 @@ public class ArtifactText : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("TEXT: " + textDisplayStage);
         if (isDisplaying)
         {
             if (!isDoneAnimating)
@@ -117,5 +118,12 @@ public class ArtifactText : MonoBehaviour
     {
         isDisplaying = true;
         isDoneAnimating = false;
+    }
+
+    public void Reset()
+    {
+        isDisplaying = false;
+        textDisplayStage = 0;
+        untilIndex = 0;
     }
 }
