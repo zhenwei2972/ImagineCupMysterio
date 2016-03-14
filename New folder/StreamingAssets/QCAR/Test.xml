@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="raffles2" size="1000.000000 1777.777832" />
+    <ImageTarget name="raffles" size="1000.000000 1777.777832" />
+    <ImageTarget name="giantBaby" size="1000.000000 750.000000" />
+    <ImageTarget name="raffles1" size="1000.000000 1778.000000" />
+    <ImageTarget name="merlion1" size="1000.000000 1778.000000" />
+    <ImageTarget name="mrtMap" size="1000.000000 692.000000" />
+    <ImageTarget name="Merlion" size="440.000000 587.000000" />
+  </Tracking>
+</QCARConfig>
