@@ -8,11 +8,11 @@ namespace Vuforia
         #region PRIVATE_MEMBER_VARIABLES
         private int merlionStatus;
         private int mrtStatus;
-        float timeLeft = 5;
+        float timeLeft = 60;
         //private int[3] objectStatues =0;
         int[] objectStatus = new int[3];
         private TrackableBehaviour mTrackableBehaviour;
-
+       
         public GameObject artifact;
         public Text StatusText;
 
@@ -46,11 +46,13 @@ namespace Vuforia
                 artifact.transform.RotateAround(artifact.transform.position, artifact.transform.up, 75 * Time.deltaTime);
                 }
                 
-                else if (timeLeft < 0)
+                else if (timeLeft < 0 )
                 {
                     ScannerStatus = 1;
                     StatusText.text = "Scan Complete Object Received";
+                    Debug.Log("Clear!");
                 }
+                
                 PlayerPrefs.SetInt("merlionStatus", objectStatus[0]);
                 PlayerPrefs.SetInt("mrtStatus", objectStatus[1]);
                 PlayerPrefs.SetInt("babyStatus", objectStatus[2]);

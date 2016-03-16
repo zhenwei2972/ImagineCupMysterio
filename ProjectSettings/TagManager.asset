@@ -13,6 +13,15 @@ TagManager:
   - VRHead
   - AnagramHandle
   - AnagramSolver
+  - Shield
+  - Launcher
+  - TouchControl
+  - ShieldRed
+  - ShieldGreen
+  - ShieldBlue
+  - ShieldYellow
+  - Destroy
+  - MayanMask
   layers:
   - Default
   - TransparentFX
