@@ -22,6 +22,7 @@ TagManager:
   - ShieldYellow
   - Destroy
   - MayanMask
+  - MindPalaceExit
   layers:
   - Default
   - TransparentFX

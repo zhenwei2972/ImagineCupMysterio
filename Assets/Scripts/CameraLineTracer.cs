@@ -102,6 +102,20 @@ public class CameraLineTracer : MonoBehaviour
                 }
                 #endregion
             }
+            else if (hit.transform.gameObject.tag.Equals("MindPalaceExit"))
+            {
+                viewedObjects[0] = hit.transform.gameObject;
+
+                if (viewedObjects[0] == viewedObjects[1])
+                {
+
+                }
+                else
+                {
+                    viewedObjects[1] = viewedObjects[0];
+                    hit.transform.gameObject.GetComponent<ExitTriggerBehaviour>().ActivateExit();
+                }
+            }
         }
         else
         {
@@ -133,6 +147,11 @@ public class CameraLineTracer : MonoBehaviour
             else if (viewedObjects[1] != null && (viewedObjects[1].tag.Equals("AnagramHandle")))
             {
                 viewedObjects[1].GetComponent<AnagramHandle>().Deselect();
+                viewedObjects[1] = null;
+            }
+            else if (viewedObjects[1] != null && (viewedObjects[1].tag.Equals("MindPalaceExit")))
+            {
+                viewedObjects[1].GetComponent<ExitTriggerBehaviour>().DeactivateExit();
                 viewedObjects[1] = null;
             }
         }
