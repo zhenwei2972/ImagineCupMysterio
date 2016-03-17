@@ -32,5 +32,10 @@ public class MainButtonBehaviour : MonoBehaviour {
     {
         Debug.Log("Load mind palace");
         // Load level here
+        Application.LoadLevel("HardyScene");
+    }
+    public void Scanner()
+    {
+        //load scanner
     }
 }

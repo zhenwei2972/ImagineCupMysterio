@@ -16,5 +16,13 @@
       <location>GIANT BABY</location>
       <description>Pieces of history etched in stone, to preserve the actions of the civilization</description>
     </Artifact>
+    <Artifact>
+      <name>CLUE ONE</name>
+      <location>Decryption of Anagram </location>
+      <description>
+        Facing the east, the stone chimera stands proud above a great expanse of water
+        With a body of stone and roar of a lion, search near water, it stands like a fish out of water
+      </description>
+    </Artifact>
   </Artifacts>
 </ArtifactCollection>

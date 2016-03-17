@@ -16,7 +16,7 @@ namespace Vuforia
         public GameObject artifact;
         public Text StatusText;
 
-        private bool isRendered = false;
+        public bool isRendered = false;
         #endregion // PRIVATE_MEMBER_VARIABLES
         public int ScannerStatus = 0;
 

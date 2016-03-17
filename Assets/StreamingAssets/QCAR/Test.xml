@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="12832383_10204276544553845_1024982567023658760_n" size="960.000000 540.000000" />
     <ImageTarget name="miku" size="540.000000 960.000000" />
     <ImageTarget name="raffles2" size="1000.000000 1777.777832" />
     <ImageTarget name="raffles" size="1000.000000 1777.777832" />

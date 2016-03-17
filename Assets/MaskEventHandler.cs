@@ -44,7 +44,10 @@ namespace Vuforia
             timeLeft -= Time.deltaTime;
             if (timeLeft > 0)
             {
-                artifact.transform.RotateAround(artifact.transform.position, artifact.transform.up, 75 * Time.deltaTime);
+                if (artifact != null)
+                {
+                    artifact.transform.RotateAround(artifact.transform.position, artifact.transform.up, 75 * Time.deltaTime);
+                }
             }
 
             else if (timeLeft < 0 || touchControl.GetComponent<touchControl>().clear == 4)

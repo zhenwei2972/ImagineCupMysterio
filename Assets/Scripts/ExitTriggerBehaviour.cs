@@ -22,6 +22,7 @@ public class ExitTriggerBehaviour : MonoBehaviour {
             stareTime -= Time.deltaTime;
             if (stareTime <= 0)
             {
+                Application.LoadLevel("ARScene");
                 // Load Scanner
             }
         }

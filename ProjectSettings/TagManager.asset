@@ -23,6 +23,7 @@ TagManager:
   - Destroy
   - MayanMask
   - MindPalaceExit
+  - Totem
   layers:
   - Default
   - TransparentFX

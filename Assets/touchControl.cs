@@ -3,13 +3,14 @@ using System.Collections;
 
 public class touchControl : MonoBehaviour {
     GameObject obj;
-    bool fire = false;
+   public bool fire = false;
     public float thrust = 20;
     public GameObject ball;
     public bool ballAlive = true;
     public int clear = 0;
     public GameObject maskParticle;
     public GameObject mayanMask;
+    Vector3 movementVector = new Vector3(0, 0, 400);
     // Use this for initialization
     void Start () {
 	
@@ -42,19 +43,29 @@ public class touchControl : MonoBehaviour {
 
             if (obj != null)
             {
-                Vector3 movementVector = new Vector3(0, 0, 400);
+               
                 //    obj.transform.position = Vector3.Lerp(obj.transform.position, obj.transform.position + movementVector, Time.deltaTime);
                 obj.GetComponent<Rigidbody>().AddForce(movementVector * thrust);
             }
         }
+        else
+        {
+            obj = GameObject.FindGameObjectWithTag("Launcher");
+            if (obj != null)
+            {
+                Vector3 zero = new Vector3(0, 0, 0);
+                obj.GetComponent<Rigidbody>().velocity = (zero);
+            }
+        }
+
         if (ballAlive == false)
         {
-            if (clear < 4)
-            {
-                fire = false;
-                Instantiate(ball, transform.position, transform.rotation);
-                ballAlive = true;
-            }
+            //if (clear < 4)
+            //{
+            //    fire = false;
+            //    Instantiate(ball, transform.position, transform.rotation);
+            //    ballAlive = true;
+            //}
 
         }
         if (clear >= 4)

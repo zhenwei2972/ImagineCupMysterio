@@ -5,9 +5,11 @@ using System.Collections;
 public class Anagram : MonoBehaviour
 {
     public Text[] alphabetDisplay;
-
+    private AudioSource audio;
     public GameObject[] anagramRotators;
-
+    public Text updateText;
+    public GameObject cluePanel;
+    bool playOnce = true;
     private int indexHasChanged = -1; // When none has changed
 
     private char[] alphabets = { 'A', 'B', 'C', 'D', 
@@ -26,6 +28,10 @@ public class Anagram : MonoBehaviour
                                      138,154,167,180,
                                      193,208,223,235,249,266};
 
+    void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
     // Handle all changes in the letter sequence. Called from the individual AnagramHandle objects
     public void ApplyChange(bool Up, int alphabetIndex)
     {
@@ -55,26 +61,45 @@ public class Anagram : MonoBehaviour
 
     }
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
+   
 
     // Update is called once per frame
     void Update()
     {
+
         Debug.Log(orderInIndex[0] + "-" + orderInIndex[1] + "-" + orderInIndex[2] + "-" + orderInIndex[3] + "-" + orderInIndex[4]);
+        
         if (indexHasChanged != -1) // One of the rotators has changed
         {
             anagramRotators[indexHasChanged].transform.localEulerAngles = new Vector3(
                 anagramRotators[indexHasChanged].transform.localEulerAngles.x,
                 anagramRotators[indexHasChanged].transform.localEulerAngles.y,
                 rotationAngles[orderInIndex[indexHasChanged]]);
-            
+            //alphabetDisplay[indexHasChanged].text = "ruler";
             alphabetDisplay[indexHasChanged].text = alphabets[orderInIndex[indexHasChanged]].ToString();
 
             indexHasChanged = -1;
         }
+        if (revealString() == "SHORE")
+        {
+            if (playOnce)
+            {
+            updateText.text = "Anagram Solved , Clue Obtained ";
+            playOnce = false;
+            audio.Play();
+            cluePanel.SetActive(true);
+            }
+            
+            //You Win
+        }
+    }
+    string revealString()
+    {
+        string result="";
+        for(int i =0; i<5; i++)
+        {
+            result += alphabets[orderInIndex[i]];
+        }
+        return result;
     }
 }
